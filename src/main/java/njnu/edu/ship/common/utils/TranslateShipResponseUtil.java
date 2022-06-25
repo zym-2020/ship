@@ -95,7 +95,7 @@ public class TranslateShipResponseUtil {
     private static byte[] getByteArray32(byte[] b, int count) {
         byte[] result = new byte[4];
         for(int i = 0; i < 4; i++) {
-            result[i] = b[count + 1];
+            result[i] = b[count + i];
         }
         return result;
     }
@@ -103,7 +103,7 @@ public class TranslateShipResponseUtil {
     private static byte[] getByteArray16(byte[] b, int count) {
         byte[] result = new byte[2];
         for(int i = 0; i < 2; i++) {
-            result[i] = b[count + 1];
+            result[i] = b[count + i];
         }
         return result;
     }
