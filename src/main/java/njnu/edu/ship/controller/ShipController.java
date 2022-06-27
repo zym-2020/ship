@@ -1,7 +1,9 @@
 package njnu.edu.ship.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import njnu.edu.ship.common.utils.Byte2btye;
 import njnu.edu.ship.common.utils.GenerateBytes;
+import njnu.edu.ship.common.utils.RemoteRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +26,11 @@ public class ShipController {
     
     @RequestMapping(value = "/getShipBinary", method = RequestMethod.GET)
     public byte[] getShipBinary() {
+
+        JSONObject jsonObject = RemoteRequest.getShipInfo("414432000");
+        System.out.println(jsonObject);
         return Byte2btye.getShipBinary(1,7,GenerateBytes.generate(123456789, 121116457,31766489, 0, 200, 50, 13));
+
+
     }
 }
