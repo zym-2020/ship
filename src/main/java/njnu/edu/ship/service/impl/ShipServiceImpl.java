@@ -26,9 +26,9 @@ public class ShipServiceImpl implements ShipService {
     public void addAllShip() {
         List<Object> list = new ArrayList<>();
         List<Map<String, Object>> listYangZte;
-        for (Integer i = 2; i <= 8; i++) {
+        for (Integer i = 3; i <= 5; i++) {
             String zoom = Integer.toString(i);
-            listYangZte= TranslateShipResponseUtil.translate(new String[]{"71957934", "18541879", "73272997", "19611906"}, zoom, "0", "33958.91359543285", "1");
+            listYangZte= TranslateShipResponseUtil.translate(new String[]{"71957934", "18541879", "73272997", "19611906"}, zoom, "0", "51968.260397426646", "1");
             addShipColumn(listYangZte,i);
             list.add(listYangZte);
 
@@ -108,6 +108,8 @@ public class ShipServiceImpl implements ShipService {
                         zoom);
                 record.setCode(code);
                 codes= Bytes.concat(codes,code);
+
+
 
             }
 

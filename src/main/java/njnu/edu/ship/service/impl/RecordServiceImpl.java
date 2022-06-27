@@ -6,6 +6,9 @@ import njnu.edu.ship.service.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Service
 public class RecordServiceImpl implements RecordService {
     @Autowired
@@ -15,5 +18,13 @@ public class RecordServiceImpl implements RecordService {
     public void addRecord(Record record){
         recordMapper.addRecord(record);
     }
+
+//    @Override
+//    public Map<String, Object> QueryCodeByMsi(Integer mmsi) {
+//        Map<String, Object> result = new HashMap<>();
+//        result.put("list", recordMapper.QueryCodeByMsi(mmsi));
+//        return result;
+
+    //}
 
 }

@@ -8,9 +8,12 @@
         <result column="zoom" property="zoom"/>
         <result column="code" property="code"/>
 
-
     </resultMap>
     <insert id="addRecord" parameterType="njnu.edu.ship.pojo.Record">
         insert into record values (#{id},#{mmsi},#{date},#{zoom},#{code});
     </insert>
+
+    <select id="QueryCodeByMsi" resultType="java.util.HashMap">
+        select record.code from  record  where  mmsi = #{mmsi};
+    </select>
 </mapper>

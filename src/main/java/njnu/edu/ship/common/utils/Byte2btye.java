@@ -4,9 +4,10 @@ import java.nio.ByteBuffer;
 
 public class Byte2btye {
 
-    public static byte[] getShipBinary(int size,int field,byte[] oldByte)
+    public static byte[] getShipBinary(byte[] oldByte)
     {
         //int Size = field * size;
+        int field =7;
         int bufferSize = oldByte.length;
         ByteBuffer buffer = ByteBuffer.allocate(bufferSize);
         byte[] b = buffer.array();

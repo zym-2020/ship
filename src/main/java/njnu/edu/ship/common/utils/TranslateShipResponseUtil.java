@@ -18,6 +18,7 @@ public class TranslateShipResponseUtil {
     public static List<Map<String, Object>> translate(String[] bbox, String zoom, String mmsi, String ref, String showName) {
         List<Map<String, Object>> result = new ArrayList<>();
         byte[] response = RemoteRequest.getShips(bbox, zoom, mmsi, ref, showName);
+//        byte[] response = RemoteRequest.getShips1(bbox, zoom, mmsi, ref, showName);
         int payloadSize = response.length;
         int headerLength = payloadSize >= 12 ? response[2] : 0;
         boolean zoomLevelOver13 = Integer.parseInt(zoom) > 13;
