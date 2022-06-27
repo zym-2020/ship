@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="njnu.edu.ship.dao.ShipMapper">
+    <resultMap id="ShipResultMap" type="njnu.edu.ship.pojo.Ship">
+        <result column="mmsi" property="mmsi"/>
+        <result column="length" property="length"/>
+        <result column="width" property="width"/>
+        <result column="name" property="name"/>
+        <result column="country" property="country"/>
+        <result column="picture" property="picture"/>
+
+
+    </resultMap>
+        <insert id="addShip" parameterType="njnu.edu.ship.pojo.Ship">
+            insert into ship values(#{mmsi}, #{length}, #{width}, #{name}, #{country}, #{picture});
+        </insert>
+
+        <select id="QueryLenWidByMsi" resultType="java.util.HashMap">
+        select ship.length,ship.width from  ship  where  mmsi = #{mmsi};
+        </select>
+
+    <select id="CountByMsi" resultType="java.lang.Integer">
+        select count(*) from  ship  where  mmsi = #{mmsi};
+    </select>
+
+
+</mapper>

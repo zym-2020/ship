@@ -12,7 +12,7 @@ public class GenerateBytes {
         byte[] result = new byte[25];
         int[] arr = new int[] {mmsi, lon, lat, rot, len, wid};
         for(int i = 0; i < arr.length; i++) {
-            byte[] temp = int2bytes(i);
+            byte[] temp = int2bytes(arr[i]);
             for(int j = 0; j < 4; j++) {
                 result[i * 4 + j] = temp[j];
             }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="njnu.edu.ship.dao.RecordMapper">
+    <resultMap id="RecordResultMap" type="njnu.edu.ship.pojo.Record">
+        <result column="id" property="id"/>
+        <result column="mmsi" property="mmsi"/>
+        <result column="date" property="date"/>
+        <result column="zoom" property="zoom"/>
+        <result column="code" property="code"/>
+
+    </resultMap>
+    <insert id="addRecord" parameterType="njnu.edu.ship.pojo.Record">
+        insert into record values (#{id},#{mmsi},#{date},#{zoom},#{code});
+    </insert>
+
+    <select id="QueryCodeByMsi" resultType="java.util.HashMap">
+        select record.code from  record  where  mmsi = #{mmsi};
+    </select>
+</mapper>

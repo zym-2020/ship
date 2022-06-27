@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ship {
-    int mmsi;
-    int length;
-    int width;
+    Integer mmsi;
+    Integer length;
+    Integer width;
     String name;
     String country;
     String picture;

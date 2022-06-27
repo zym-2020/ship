@@ -18,8 +18,8 @@ import java.util.Date;
 @NoArgsConstructor
 public class Record {
     String id;
-    int mmsi;
+    Integer mmsi;
     Date date;
-    int zoom;
+    Integer zoom;
     byte[] code;
 }
